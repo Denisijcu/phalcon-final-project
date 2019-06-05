@@ -1,0 +1,68 @@
+
+<style>
+    img {
+        min-width: 10vw;
+        max-width: 10vw;
+        max-height: 20vh;
+        min-height: 20vh;
+        border-radius: 0% border: 1px solid black;
+        margin: 1px;
+    }
+</style>
+
+
+<?php include('includes/Header.php') ?>
+
+<a class="btn right black" href="<?= '../stamps'; ?>">Go back </a>
+
+<section id="gallery" class="section-gallery scrollspy">
+    <div style="border: 3px solid gray; overflow:hidden;padding:3px;">
+
+        <div id="tab1" class="col s12">
+
+            <div class="row">
+
+                <h5 class="text center">
+                    <strong>Presidents of the United State of America</strong>
+                    <br>
+                    <span> <strong></strong></span>
+                </h5>
+                <table>
+                    <theader>
+                        <th> </th>
+                        <th> </th>
+                        <th> </th>
+                        <th> </th>
+                        <th> </th>
+                        <th> </th>
+                        <th> </th>
+                        <th> </th>
+                    </theader>
+                    <tbody>
+
+
+                        <?php foreach ($stamps as $stamp) { ?>
+
+                            <tr>
+                                <td><img src="<?= $stamp->picture; ?>" alt="<?= $stamp->name; ?>" title="<?= $stamp->name; ?>"></td>
+                                <td><img src="<?= $stamp->picture; ?>" alt="<?= $stamp->name; ?>" title=<?= $stamp->name; ?>"></td>
+                                <td><img src="<?= $stamp->picture; ?>" alt="<?= $stamp->name; ?>" title=<?= $stamp->name; ?>"></td>
+                                <td><img src="<?= $stamp->picture; ?>" alt="<?= $stamp->name; ?>" title=<?= $stamp->name; ?>"></td>
+                                <td><img src="<?= $stamp->picture; ?>" alt="<?= $stamp->name; ?>" title=<?= $stamp->name; ?>"></td>
+                                <td><img src="<?= $stamp->picture; ?>" alt="<?= $stamp->name; ?>" title=<?= $stamp->name; ?>"></td>
+                                <td><img src="<?= $stamp->picture; ?>" alt="<?= $stamp->name; ?>" title=<?= $stamp->name; ?>"></td>
+                                <td><img src="<?= $stamp->picture; ?>" alt="<?= $stamp->name; ?>" title=<?= $stamp->name; ?>"></td>
+                            </tr>
+
+                        <?php } ?>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<a class="btn right black" href="<?= '../stamps'; ?>">Go back </a>
+
+<?php include('includes/Footer.php') ?>

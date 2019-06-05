@@ -1,0 +1,38 @@
+<?php include('includes/Header.php') ?>
+<a class="btn right black" href="<?= 'stamps'; ?>" style="position:absolute; margin-top:-45px;">Go back </a>
+
+
+
+<body>
+    <div class="card">
+                <div class="col s6 m3">
+                    <div class="card-image">
+                      <img src="<?=$stamps->picture ?>" alt="<?php echo $name; ?>" />
+                    </div>
+                </div>
+                <div class="col s6 m7">
+                    <table>
+                        <th> </th>
+                        <th>Term of Office</th>
+                        <th>Party </th>
+                        <tr>
+                            <td>
+                                <h5><?php echo $stamps->name; ?></h5>
+                            </td>
+                            <td> <?php echo $stamps->term; ?></td>
+                            <td> <?php echo $stamps->party; ?></td>
+                        </tr>
+                    </table>
+
+                    <p> <?php echo $stamps->description; ?> </p>
+
+                </div>
+            </div>
+        </div>
+
+        <a class="btn right black" href="<?= 'stamps'; ?>">Go back </a>
+
+        <?php include('includes/Footer.php') ?>
+
+</body>
+</html>

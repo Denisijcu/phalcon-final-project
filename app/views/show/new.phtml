@@ -1,0 +1,64 @@
+<?php include('includes/Header.php') ?>
+
+<section>
+
+    <div id="new-stamp" style="background-color:white; color: black;">
+        <h3>New Stamp</h3>
+        <div class="row">
+            <form action="save" method="post" class="col s12" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <label for="image">Add image</label>
+                        <br>
+                        <br>
+                        <input type="file" id="image" name="picture">
+                    </div>
+                </div>
+
+              <!--
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <input type="text" name="number" required>
+                        <label>Number</label>
+                    </div>
+                </div>
+
+              -->
+                
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <input type="text" name="name" required>
+                        <label>Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <input type="text" name="term" required>
+                        <label>Term of Office</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <label>Party</label>
+                        <input type="text" name="party" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <input type="text" name="description" required>
+                        <label>Description</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Submit</button>
+                <a href="../index.php" class="btn black">Cancel </a>
+
+            </form>
+        </div>
+    </div>
+
+
+    </div>
+
+
+    <?php include('includes/Footer.php') ?>

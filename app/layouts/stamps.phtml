@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><?= $this->dispatcher->getControllerName() ?></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Parisienne" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <title>Stamps Collection</title>
+    <style type="text/css">
+        footer {
+            background-color: #c1c1c1;
+            font-size: small;
+            padding: 10px;
+            margin-top: 50px;
+        }
+
+        .main-header {
+            background: url('images/i1.png');
+            background-size: cover;
+            background-position: center;
+            height: 95vh;
+            min-height: 100px;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        img {
+            max-width: 15vw;
+            min-width: 15vw;
+            max-height: 15vw;
+            min-height: 15vw;
+            border: 5px solid gray;
+            border-style: ridge;
+            margin: 3px;
+        }
+    </style>
+</head>
+
+<body id="home" class="scrollspy">
+
+    <nav class="black">
+        <div style="padding-left:100px;">
+            <div class="nav-wrapper">
+                <a href="index.php" class="brand-logo">
+                    <span>
+
+                        <i class="material-icons">flag</i></span>
+
+
+                    <span>USA Presidents</span>
+
+                </a>
+                <a href="#" data-activates="side-nav" class="button-collapse show-on-small right">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li class="active">
+                        <a href="index.php" activated>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="gallery">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="about">About</a>
+                    </li>
+                </ul>
+                <!-- Side nav -->
+                <ul id="side-nav" class="side-nav">
+                    <li>
+                        <div class="user-view">
+                            <div class="background">
+
+                                <div class="col s12 m12">
+                                    <img src="images/eagle.jpg" style="min-width:58vw; min-height:30vh;" width="100%" alt="" title="">
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+
+                            <a href="#">
+                                <span class="name red-text">Stamps Collection</span>
+                            </a>
+                            <a href="#">
+                                <span class="email red-text">stamps@gmail.com</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#dashboard">
+                            <i class="material-icons">home</i>Dashboard</a>
+                    </li>
+
+                    <li>
+                        <a href="gallery">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="contact">Contact</a>
+                    </li>
+                    <li>
+                        <div class="divider"></div>
+                    </li>
+                    <li>
+                        <a href="about">About</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="main-header">
+    </section>
+    <section id="dashboard">
+        <div class="card">
+            <div class="row">
+                <?php $page = 1; ?>
+                <div class="col-sm">
+                    <?= $this->getContent($page) ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script type="text/javascript" src="showpictures.js">
+        <!--Import jQuery before materialize.js-->
+        <
+        script type = "text/javascript"
+        src = "https://code.jquery.com/jquery-3.2.1.min.js" >
+    </script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+
+    <script>
+        // Hide Sections
+        $('.section').hide();
+        setTimeout(function() {
+            $(document).ready(function() {
+                //Init Tabs
+                $('.tabs').tabs();
+                // Init Sidenav
+                $('.button-collapse').sideNav();
+
+                // Init Scrollspy
+                $('.scrollspy').scrollSpy();
+
+                // Init Corousel
+                $('.carousel').carousel();
+
+                // ScrollFire
+                const options = [{
+                        selector: '.main-text',
+                        offset: 0,
+                        callback: function(el) {
+                            Materialize.fadeInImage($(el));
+                        }
+                    },
+                    {
+                        selector: '.navbar-fixed',
+                        offset: 1500,
+                        callback: function() {
+                            $('nav').removeClass('transparent');
+                            $('nav').addClass('blue-grey darken-3');
+                        }
+                    }
+                ];
+                // Init Side Nave
+                $('.button-collapse').sideNav();
+                // Init Slider
+                $('.slider').slider({
+                    indicators: false,
+                    height: 500,
+                    transition: 500,
+                    interval: 6000
+                });
+                // Show sections
+                $('.section').fadeIn();
+                // Hide preloader
+                $('.loader').fadeOut();
+
+                //Init Side nav
+                $('.button-collapse').sideNav();
+            });
+        }, 1000);
+    </script>
+</body>
+
+
+</html>

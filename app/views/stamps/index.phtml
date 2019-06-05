@@ -1,0 +1,173 @@
+<style>
+    .image-style {
+        style=min-width: 10vw;
+        max-width: 10vw;
+        max-height: 20vh;
+        min-height: 20vh;
+        border-radius: 0%
+    }
+    h3{ text-align:center};
+</style>
+<h3>USA Presidents</h1>
+<a class="btn primary green" href="<?= 'show/new'; ?>">Add New</a>
+    <table class="table class=" table-responsive">
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Term of Office</th>
+            <th>Party</th>
+            <th>Watch</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+
+        <?php
+        $pageActive = false;
+        $r = 1;
+        $r2 = 0;
+        ?>
+        <?php foreach ($stamps as $stamp) {
+
+            if ($page == 1 || $page == 0) {
+                $pageActive = true;
+                if ($r > 5) {
+                    break;
+                }
+            }
+
+            if ($page == 2) {
+                if ($r > 5) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 5) {
+                        break;
+                    }
+                }
+            }
+
+            if ($page == 3) {
+                if ($r > 10) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 5) {
+                        break;
+                    }
+                }
+            }
+
+            if ($page == 4) {
+                if ($r > 15) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 5) {
+                        break;
+                    }
+                }
+            }
+
+            if ($page == 5) {
+                if ($r > 20) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 5) {
+                        break;
+                    }
+                }
+            }
+
+            if ($page == 6) {
+                if ($r > 25) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 5) {
+                        break;
+                    }
+                }
+            }
+
+            if ($page == 7) {
+                if ($r > 30) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 5) {
+                        break;
+                    }
+                }
+            }
+
+            if ($page == 8) {
+                if ($r > 35) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 5) {
+                        break;
+                    }
+                }
+            }
+            if ($page == 9) {
+                if ($r > 40) {
+                    $pageActive = true;
+                    $r2++;
+                    if ($r2 > 10) {
+                        break;
+                    }
+                }
+            }
+
+            $r++;
+
+            if ($pageActive) {
+                ?>
+                <tr>
+                    <td><img src="<?= $stamp->picture ?>" title='<?= $stamp->name ?>' class="image-style" /></td>
+                    <td><?= $stamp->name ?></td>
+                    <td><?= $stamp->term ?></td>
+                    <td><?= $stamp->party ?></td>
+                    <td class="text-right">
+                        <a class="btn teal" href="show?id=<?php echo $stamp->id_stamp ?>">Read More</a>
+                    </td>
+                    <td class="text-right">
+                        <a class="btn blue" href="show/update?id=<?php echo $stamp->id_stamp ?>">Update</a>
+                    </td>
+                    <td class="text-right">
+                        <a class="btn red" href="show/delete?id=<?php echo $stamp->id_stamp ?>">&times;</a>
+                    </td>
+                </tr>
+
+            <?php }
+    } ?>
+    </table>
+
+    <?php
+    
+    
+    $active = 'class="active"';
+    $deactive ='class="waves-effect"';
+    $status1 = $page==0 || $page==1 ? $active : $deactive;
+    $status2 = $page==2 ? $active : $deactive;
+    $status3 = $page==3 ? $active : $deactive;
+    $status4 = $page==4 ? $active : $deactive;
+    $status5 = $page==5 ? $active : $deactive;
+    $status6 = $page==6 ? $active : $deactive;
+    $status7 = $page==7 ? $active : $deactive;
+    $status8 = $page==8 ? $active : $deactive;
+    $status9 = $page==9 ? $active : $deactive;
+    
+    
+    ?>
+
+    <ul class="pagination">
+        <li class="disabled"><a href="stamps?page=1"><i class="material-icons">chevron_left</i></a></li>
+        <li '. <?=$status1?> .'><a href="stamps?page=1">1</a></li>
+        <li '. <?=$status2 ?>.'><a href="stamps?page=2">2</a></li>
+        <li '. <?=$status3 ?>.'><a href="stamps?page=3">3</a></li>
+        <li '. <?=$status4 ?>.'><a href=stamps?page=4">4</a></li>
+        <li '. <?=$status5 ?>.'><a href="stamps?page=5">5</a></li>
+        <li '. <?=$status6 ?>.'><a href="stamps?page=6">6</a></li>
+        <li '. <?=$status7 ?>.'><a href="stamps?page=7">7</a></li>
+        <li '. <?=$status8 ?>.'><a href=stamps?page=8">8</a></li>
+        <li '. <?=$status9 ?>.'><a href="stamps?page=9">9</a></li>
+        <li class="disabled"><a href="stamps?page=9"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
+
+  <?php include 'includes/Footer.php'; ?>

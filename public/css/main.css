@@ -1,0 +1,127 @@
+body {
+    background-color: grey;
+}
+
+img {
+    max-width: 15vw;
+    min-width: 15vw;
+    max-height: 15vw;
+    min-height: 15vw;
+    border: 5px solid gray;
+    border-style: ridge;
+    margin: 3px;
+}
+
+.main-header {
+    background: url('images/i1.png');
+    background-size: cover;
+    background-position: center;
+    height: 95vh;
+    min-height: 100px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.tabs {
+    color: black;
+}
+
+a {
+    color: black;
+}
+
+table,
+.container {
+    background-color: white;
+    color: black;
+}
+
+.container {
+    padding: 15px;
+}
+
+.basex {
+    position: absolute;
+    left: 300px;
+    top: 300px;
+    min-width: 15vw;
+    max-width: 15vw;
+    max-height: 35vh;
+    min-height: 35vh;
+    background: url('images/base.jpg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+
+.images {
+    position: absolute;
+    min-width: 10vw;
+    max-width: 10vw;
+    max-height: 20vh;
+    min-height: 20vh;
+
+    border-style: dashed;
+
+    top: 1%;
+    left: 58%;
+
+}
+
+.quotes {
+    position: absolute;
+    left: 70%;
+    top: 1%;
+    color: black;
+    font-family: 'Parisienne', cursive;
+
+}
+
+.card {
+    padding: 25px;
+    text-align: justify;
+}
+
+.small {
+    display: none;
+}
+
+
+@media (max-width: 600px) {
+    .main-header {
+        height: 50vh;
+    }
+
+    .small {
+        display: inline-block;
+    }
+
+    .quotes {
+        position: absolute;
+        left: 10%;
+        top: 40%;
+        color: black;
+        font-family: 'Parisienne', cursive;
+        font-size: 10px;
+
+    }
+
+    .images {
+        position: absolute;
+        min-width: 30vw;
+        max-width: 30vw;
+        max-height: 20vh;
+        min-height: 20vh;
+
+        border-style: dashed;
+
+        top: 1%;
+        left: 68%;
+
+    }
+
+
+}
